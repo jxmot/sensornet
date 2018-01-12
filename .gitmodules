@@ -4,3 +4,6 @@
 [submodule "node-dht-udp"]
 	path = node-dht-udp
 	url = https://github.com/jxmot/node-dht-udp
+[submodule "client-dht-udp"]
+	path = client-dht-udp
+	url = https://github.com/jxmot/client-dht-udp
