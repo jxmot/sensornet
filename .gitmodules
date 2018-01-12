@@ -1,3 +1,6 @@
 [submodule "esp8266-dht-udp"]
 	path = esp8266-dht-udp
 	url = https://github.com/jxmot/esp8266-dht-udp
+[submodule "node-dht-udp"]
+	path = node-dht-udp
+	url = https://github.com/jxmot/node-dht-udp
