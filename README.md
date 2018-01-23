@@ -1,3 +1,8 @@
+# PLEASE DO NOT USE THIS REPO!
+
+**I'm in the process of trying to understand how to update the submodules to match their corresponding repositories.**
+
+
 # sensornet
 
 SensorNet - An IoT project that connects ESP8266 based sensors through a NodeJS server which forwards sensor data to a database. The web client retrieves the data from the database.
