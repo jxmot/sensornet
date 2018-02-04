@@ -36,7 +36,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
     *   JavaScript/JQuery
     *   Socket.io
     *   C3.js - A D3.js based chart library
-    *   Google Gauges - an example of my work can be found [here](http://bit.ly/gh-client-dht-udp "A repository on GitHub, opens a new tab.")This page is a web client. I developed two different clients where one uses _Google Gauges_ and [this one](<http://webexperiment.info/portfolio/sensornet/>) which uses [C3.js](http://c3js.org/ "C3.js website"). However both clients are _configurable_ and utilize Socket.io for communication with the server. However this client displays more information such as status messages, and the time & date as passed along in the messages.
+    *   Google Gauges - an example of my work can be found [here](http://bit.ly/gh-client-dht-udp "A repository on GitHub, opens a new tab."). I developed two different clients where one uses _Google Gauges_ and [this one](<http://webexperiment.info/portfolio/sensornet/>) which uses [C3.js](http://c3js.org/ "C3.js website"). However both clients are _configurable_ and utilize Socket.io for communication with the server. However this client displays more information such as status messages, and the time & date as passed along in the messages.
 
 ### Features :
 
