@@ -16,7 +16,7 @@ Each module repository contains a README. Please note that this project is a *wo
 
 ## Overview
 
-I had been tinkering with using an ESP8266 and a temperature/humidity sensor to record environmental data within my home. I hadn't really moved forward with it until near the end of December 2017\. And what really prompted me to move forward with the project was the brutally cold temperatures we experienced in Chicago. I was concerned about water pipes freezing, or my furnace breaking down. So the completion of this project (_sensors, server, database, and web client_) became **very** important. Fortunately no pipes froze, and my furnace continued working! I was luckier than some of my neighbors!
+I had been tinkering with using an ESP8266 and a temperature/humidity sensor to record environmental data within my home. I hadn't really moved forward with it until near the end of December 2017. And what really prompted me to move forward with the project was the brutally cold temperatures we experienced in Chicago. I was concerned about water pipes freezing, or my furnace breaking down. So the completion of this project (_sensors, server, database, and web client_) became **very** important. Fortunately no pipes froze, and my furnace continued working! I was luckier than some of my neighbors!
 
 ### Components & Technologies :
 
@@ -35,8 +35,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
     *   HTML/CSS
     *   JavaScript/JQuery
     *   Socket.io
-    *   C3.js - A D3.js based chart library
-    *   Google Gauges - an example of my work can be found [here](http://bit.ly/gh-client-dht-udp "A repository on GitHub, opens a new tab."). I developed two different clients where one uses _Google Gauges_ and [this one](<http://webexperiment.info/portfolio/sensornet/>) which uses [C3.js](http://c3js.org/ "C3.js website"). However both clients are _configurable_ and utilize Socket.io for communication with the server. However the C3.js client displays more information such as status messages, and the time & date as passed along in the messages.
+    *   C3.js - A D3.js based chart library used in creating the gauges
 
 ### Features :
 
@@ -44,6 +43,8 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
 *   **Configuration** - The sensor devices, server, and clients are configurable in a number of aspects. For example, the sensor devices can have their reporting interval configured and the server is configurable in regards to its network connection and database type.
 *   **Server Run-Time Event Logging** - The server uses a log file module to record internal events to a text file where each event is time stamped. Configuration settings can be used to manage the log file name & extenstion, maximum file size, and other aspects.
 *   **Sensor Device Error Detection & Automatic Recovery** - The sensor devices can detect start up and run time errors and report them via UDP multi-cast. And if possible the devices can attempt to recover from some errors. All status messages are broadcasted and saved in the database by the server, and forwarded to the clients.
+*   **Automatic Server Discovery by Sensors** - When a sensor completed boot-up and initialization it sends a UDP multi-cast message that is interpreted by the Server to be a query for its IP address, and the server will respond with a message containing its IP address. 
+*   **Low Impact use of Third Party APIs(_weather data_)** - Third party APIs are used to obtain the weather observation and forecast data. The weather data is requested by the server and not by the clients. It temporarily saves the weather data and retransmits it to clients as needed.
 *   **Immediate Client Updates** - Web clients receive updates via Socket.io. The status and data updates are broadcast to all clients, and are received nearly immediately. Since the updates are transmitted when the database is updated there was an issue where clients would have to wait for the next update of sensor before it could be displayed. The work-around was to modify the server to _remember_ the last update for the sensors and then transmit their status & data when a client connects.
 *   **Low Cost of Implementation** - I was able to keep the cost of the sensor devices under $20. You might be able to get the cost even lower if the parts are sourced overseas.
 
