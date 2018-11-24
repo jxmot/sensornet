@@ -9,8 +9,7 @@ This project currently consists of 3 submodules -
 * Sensors - [esp8266-dht-udp](<https://github.com/jxmot/esp8266-dht-udp>)
 * A NodeJS server - [node-dht-udp](<https://github.com/jxmot/node-dht-udp>)
 * Client - [client-dht-udp](<https://github.com/jxmot/client-dht-udp>)
-* Client - [client-dht-udp](./client-dht-udp/README.md)
-* 
+
 Each module repository contains a README. Please note that this project including its submodules is a *work in progress* and is subject to changes and additions.
 
 **NOTE:** The links above point to the original submodule repositories. They *may* be _**newer**_ than what is contained to within this repository. I will update this repository with the submodules changes when they hit milestones.
@@ -47,7 +46,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
 *   **Automatic Server Discovery by Sensors** - When a sensor completes boot-up and initialization it sends a UDP multi-cast message that is interpreted by the Server to be a query for its IP address, and the server will respond with a message containing its IP address. The sensor will send data to that IP address when updates occur.
 *   **Low Impact use of Third Party APIs(_weather data_)** - Third party APIs are used to obtain the weather observation and forecast data. The weather data is requested by the server and not by the clients. It temporarily saves the weather data and retransmits it to clients as needed.
 *   **Immediate Client Updates** - Web clients receive updates via Socket.io. The status and data updates are broadcast to all clients, and are received nearly immediately. Since the updates are transmitted when the database is updated there was an issue where clients would have to wait for the next update of sensor before it could be displayed. The work-around was to modify the server to _remember_ the last update for the sensors and then transmit their status & data directly to the client when it connects.
-*   **Low Cost of Implementation** - I was able to keep the cost of the sensor devices under $20. You might be able to get the cost even lower if the parts are sourced overseas.
+*   **Low Cost of Implementation** - I was able to keep the cost of the sensor devices under $20. You might be able to get the cost even lower if the parts are sourced overseas. Additional costs are the SensorNet Server platform and hosting for the SensorNet application web page. My SensorNet server is running on a NAS that runs linux and Node.js. It also contains the MySQL database used for storing sensor activity. The application page could be hosted on the same NAS because it also runs Apache. But I chose to use a hosting service instead. 
 
 ## Architecture Overview
 
