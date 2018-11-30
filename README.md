@@ -22,7 +22,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
 
 *   **Sensor Devices :**
     *   ESP-01S
-    *   DHT22
+    *   DHT22/BSS138 - The use of a BSS138 based bidirectional level converter and proved to be an solution in preventing data-read errors.
     *   WiFi/UDP - The sensor devices communicate a JSON packet via UDP over WiFi to the server. Status messages are broadcast and data messages are targeted at the server. The status message broadcast will allow future devices on the network to monitor and manage the status of the sensor devices.
 
 *   **Server :**
@@ -39,7 +39,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
 
 ### Features :
 
-*   **Data Management** - The total number of rows in the status and data tables is managed. This was one my requirements to keep the tables from growing to an unmanageable size. This feature is implemented as a configurable timer that removes rows based on _age_.
+*   **Data Management** - The total number of rows in the status and data tables is managed. This was one my requirements to keep the tables from growing to an unmanageable size. This feature is implemented as a configurable timer that removes rows based on a configurable _age_.
 *   **Configurable** - The sensor devices, server, and clients are configurable in a number of aspects. For example, the sensor devices can have their reporting interval configured and the server is configurable in regards to its network connection and database type. Please see the submodule README for additional details.
 *   **Server Run-Time Event Logging** - The server uses a log file module to record internal events to a text file where each event is time stamped. Configuration settings can be used to manage the log file name & extenstion, maximum file size, and other aspects.
 *   **Sensor Device Error Detection & Automatic Recovery** - The sensor devices can detect start up and run time errors and report them via UDP multi-cast. And if possible the devices can attempt to recover from some errors. All status messages are broadcast by the sensors and saved in the database by the server, and forwarded to the clients.
