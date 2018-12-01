@@ -3,10 +3,10 @@
 SensorNet - An IoT project that connects ESP8266 based sensors through a NodeJS server which forwards sensor data to a database. The web client received notifications when sensor status or data is updated.
 
 - [Overview](#overview)
-  * [Components & Technologies :](#components---technologies--)
-  * [Features :](#features--)
+  * [Components and Technologies](#components-and-technologies)
+  * [Features](#features)
 - [Architecture Overview](#architecture-overview)
-  * [Sensor Data & Status Handling](#sensor-data---status-handling)
+  * [Sensor Data and Status Handling](#sensor-data-and-status-handling)
   * [Weather Data Handling](#weather-data-handling)
   * [Submodules](#submodules)
 
@@ -16,7 +16,7 @@ SensorNet - An IoT project that connects ESP8266 based sensors through a NodeJS 
 
 I had been tinkering with using an ESP8266 and a temperature/humidity sensor to record environmental data within my home. I hadn't really moved forward with it until near the end of December 2017. And what really prompted me to move forward with the project was the brutally cold temperatures we experienced in Chicago. I was concerned about my home's water pipes freezing, or my furnace breaking down. So the completion of this project (_sensors, server, database, and web client_) became **very** important. Fortunately no pipes froze, and my furnace continued working! I was luckier than some of my neighbors!
 
-## Components & Technologies :
+## Components and Technologies
 
 *   **Sensor Devices :**
     *   ESP-01S
@@ -35,7 +35,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
     *   Socket.io
     *   C3.js - A D3.js based chart library used in creating the gauges
 
-## Features :
+## Features
 
 *   **Data Management** - The total number of rows in the status and data tables is managed. This was one my requirements to keep the tables from growing to an unmanageable size. This feature is implemented as a configurable timer that removes rows based on a configurable _age_.
 *   **Configurable** - The sensor devices, server, and clients are configurable in a number of aspects. For example, the sensor devices can have their reporting interval configured and the server is configurable in regards to its network connection and database type. Please see the submodule README for additional details.
@@ -48,7 +48,7 @@ I had been tinkering with using an ESP8266 and a temperature/humidity sensor to 
 
 # Architecture Overview
 
-## Sensor Data & Status Handling
+## Sensor Data and Status Handling
 
 Here is a high level diagram of the SensorNet system :
 
