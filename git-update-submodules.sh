@@ -12,7 +12,7 @@ APP_PATH=$1
 shift
 
 if [ -z $APP_PATH ]; then
-  echo "Missing 1st argument: should be path to folder of a git repo";
+  echo "Missing 1st argument: should be full path to folder of a git repo";
   exit 1;
 fi
 
