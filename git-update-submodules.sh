@@ -7,7 +7,8 @@
 #
 #   ./git-update-submodules.sh /full/path/to/repo/with/submodules/inside master
 #
-
+# NOTE: If on Windows you can run this script from within a gitbash command window.
+#
 APP_PATH=$1
 shift
 
